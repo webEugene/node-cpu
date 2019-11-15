@@ -1,0 +1,7 @@
+extends ./layouts/main
+
+block variables
+    - var PageTitle = 'Front Page'
+block content
+    h1
+        | Info page #{process.platform} - #{os.arch()}
