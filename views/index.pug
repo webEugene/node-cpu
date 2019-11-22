@@ -6,8 +6,33 @@ block content
     div(class="wrapper")
         h1
             | Dashboard
-        div.block-info
-            | CPU Info
-            | System: #{process.platform}
-            | Desktop System: #{process.env.DESKTOP_SESSION}
-            | r: #{os.arch()}
+        div.block-wrapper
+            div.block-info
+                div.block-info__title
+                    | Computer Info
+                div.block-info__item  
+                    strong 
+                        | Platform: 
+                    | #{process.platform}
+                div.block-info__item
+                    strong 
+                        | Desktop System: 
+                    | #{process.env.DESKTOP_SESSION}
+                div.block-info__item
+                    strong 
+                        | Operating system CPU: 
+                    |   #{os.arch()}
+            div.block-info
+                div.block-info__title
+                    | CPU Info
+                div.block-info__item
+                    strong 
+                        | Operating system CPU:
+                        each val in os.cpus()
+                            div.item--each
+                                div
+                                    strong Model: 
+                                    = val['model']
+                                div
+                                    strong Speed: 
+                                    = val['speed']

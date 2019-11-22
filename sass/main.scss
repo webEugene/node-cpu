@@ -17,9 +17,32 @@ nav{
         justify-content: space-between;
     }
 }
+.block-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
 .block-info{
     border-radius: 3px;
     padding: 5px;
-    width: 200px;
+    width: 350px;
     background-color: #e2f1f7;
+    &__title{
+        background-color: blue;
+        color: #fff;
+        text-align: center;
+        border-radius: 3px 3px 0 0;
+        margin-bottom: 10px;
+        padding: 3px;
+    }
+    &__item{
+        padding: 5px 0;
+        .item--each{
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 1px 0 1px 0;
+            padding: 3px 0;
+            margin: 3px 0;
+        }
+    }
 }
