@@ -26,13 +26,10 @@ block content
                 div.block-info__title
                     | CPU Info
                 div.block-info__item
-                    strong 
-                        | Operating system CPU:
-                        each val in os.cpus()
-                            div.item--each
-                                div
-                                    strong Model: 
-                                    = val['model']
-                                div
-                                    strong Speed: 
-                                    = val['speed']
+                    //- script.
+                    //-     setInterval(() => console.log(1), 200);
+                    each val in os.cpus()
+                        div.item--each
+                            div
+                                strong Model: 
+                                span= val['model']

@@ -163,3 +163,6 @@ nav {
       border-width: 1px 0 1px 0;
       padding: 3px 0;
       margin: 3px 0; }
+      .block-info__item .item--each div
+span {
+        font-weight: 400; }
