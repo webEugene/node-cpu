@@ -17,14 +17,14 @@ block content
                 div.block-info__item
                     strong 
                         | Desktop System: 
-                    | #{process.env.DESKTOP_SESSION}
+                    | #{process.env.OS}
                 div.block-info__item
                     strong 
                         | Operating system CPU: 
                     |   #{os.arch()}
             div.block-info
                 div.block-info__title
-                    | CPU Info #{os.freemem()}
+                    | CPU Info
                 div.block-info__item
                     each val in os.cpus()
                         div.item--each
@@ -35,22 +35,10 @@ block content
             div(class="interective-ram")
                 h2
                     | Interective-ram
-                div(class="flex-wrapper")
-                    - var xx = 10;
-                    
-                    div(class="single-chart")
-                        svg(viewBox="0 0 36 36" class="circular-chart green")
-                            path(class="circle" stroke-dasharray="#{xx}, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831")
-                            text#ram-precent(x="18" y="20.35" class="percentage")
-                        span
-                            | % of your RAM is free. 
-                    script.
-                        let getRam = document.getElementById('ram-precent');
-                        let circularChart = document.querySelector('.circular-chart');
-                        socket.on('ram imfo', function(ram){
-                            xx = ram;
-                            getRam.innerHTML = ram;
-                        }); 
+                div(class="progress-bar")
+                    span(class="bar")
+                        span#ram-precent(class="progress")    
+                p % of your RAM is free. 
         div(class="block-wrapper form-input")
             h2
                 | Input

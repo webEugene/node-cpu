@@ -54,7 +54,7 @@ http.listen(8085, function(){
     let timerId = setTimeout(function tick() {
         let ram = ((os.freemem() / os.totalmem()) * 100).toFixed(2);
         io.emit('ram imfo', ram);
-        timerId = setTimeout(tick, 200);
-    }, 200);   
+        timerId = setTimeout(tick, 1000);
+    }, 1000);   
 
 });

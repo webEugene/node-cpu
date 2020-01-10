@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
         });
     }
-// console.log(os.totalmem());
+    let getRam = document.getElementById('ram-precent');
+    socket.on('ram imfo', function(ram){
+        getRam.style.width = ram + '%';
+    })
 });
 
