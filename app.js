@@ -4,6 +4,9 @@ const postcssMiddleware = require('postcss-middleware');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+const os = require('os');
 
 const index = require('./routes/index');
 // middleware
@@ -40,4 +43,18 @@ app.set('view engine', 'pug');
 //     res.render('index', { title: 'Express' });
 // });
 // listening
-app.listen(8085);
+// app.listen(8085);
+io.on('connection', function(socket){
+    console.log('a user connected');
+});
+
+http.listen(8085, function(){
+    console.log('listening on *:8085');
+
+    let timerId = setTimeout(function tick() {
+        let ram = ((os.freemem() / os.totalmem()) * 100).toFixed(2);
+        io.emit('ram imfo', ram);
+        timerId = setTimeout(tick, 200);
+    }, 200);   
+
+});
