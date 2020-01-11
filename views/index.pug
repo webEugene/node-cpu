@@ -31,14 +31,13 @@ block content
                             div
                                 strong Model: 
                                 span= val['model']
-        div(class="block-wrapper")
+        div(class="")
+            h2
+                | Interective-ram
             div(class="interective-ram")
-                h2
-                    | Interective-ram
-                div(class="progress-bar")
-                    span(class="bar")
-                        span#ram-precent(class="progress")    
-                p % of your RAM is free. 
+                div(class="ram-info cicle-block")
+                    span#ram-precent(class="ram-info__text")
+                p Free RAM.    
         div(class="block-wrapper form-input")
             h2
                 | Input

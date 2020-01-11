@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     let getRam = document.getElementById('ram-precent');
     socket.on('ram imfo', function(ram){
-        getRam.style.width = ram + '%';
+        // getRam.style.width = ram + '%';
+        getRam.innerHTML = ram + '%';
     })
 });
 

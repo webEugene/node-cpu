@@ -59,24 +59,30 @@ nav{
         }
     }
 }
-.progress-bar {
-	border-radius: $bar-radius;
-	overflow: hidden;
-  width: 100%;
-  .bar {
-    background: $bar-bg;
-    .progress {
-      background: $green;
-      color: #fff;
-      padding: $bar-size;
-      width: 10%;
+.interective-ram{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    .cicle-block{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $gray-light;
+        position: relative;
+        &.ram-info{
+            border: 8px solid $green;
+            .ram-info__text{
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+            }
+        }
     }
-  }
-	span {
-		display: block;
-	}
-
 }
+
 footer{
     background-color: lightseagreen;
     padding: 10px;
